@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-gulp-tasks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gulp tasks to deploy AWS lambdas",
   "main": "index.js",
   "repository": {
@@ -13,6 +13,10 @@
     "gulp"
   ],
   "author": "Eric Abouaf <eric.abouaf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neyric/aws-lambda-gulp-tasks/issues"
+  },
   "dependencies": {
     "aws-sdk": "^2.1.45",
     "del": "^2.0.0",
