@@ -1,0 +1,24 @@
+{
+  "name": "aws-lambda-gulp-tasks",
+  "version": "1.0.0",
+  "description": "Gulp tasks to deploy AWS lambdas",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neyric/aws-lambda-gulp-tasks.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "gulp"
+  ],
+  "author": "Eric Abouaf <eric.abouaf@gmail.com>",
+  "dependencies": {
+    "aws-sdk": "^2.1.45",
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-install": "^0.5.0",
+    "gulp-zip": "^3.0.2",
+    "node-aws-lambda": "^0.1.5"
+  }
+}
