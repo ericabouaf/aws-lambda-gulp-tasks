@@ -4,9 +4,11 @@ var gulp = require('gulp'),
     del = require('del'),
     install = require('gulp-install'),
     awsLambda = require('node-aws-lambda'),
-    path = require('path');
+    path = require('path'),
+    replace = require('gulp-replace'),
+    gulpif = require('gulp-if');
 
-module.exports = function(gulp) {
+module.exports = function(gulp, options) {
 
   gulp.task('clean', function(cb) {
     return del(['./dist', './dist.zip'], cb);
@@ -19,6 +21,7 @@ module.exports = function(gulp) {
 
   gulp.task('node-mods', function() {
     return gulp.src('./package.json')
+      .pipe(gulpif(options && options.fixRelativePackages, replace(/file:\.\.([\\/]+)/g, 'file:..$1..$1')))
       .pipe(gulp.dest('dist/'))
       .pipe(install({production: true}));
   });
@@ -32,5 +35,5 @@ module.exports = function(gulp) {
   gulp.task('upload', function(callback) {
     awsLambda.deploy('./dist.zip', require( path.join(process.cwd(), "lambda-config.js") ), callback);
   });
-
+    
 };
