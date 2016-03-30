@@ -61,7 +61,15 @@ In your repository :
  * deploy (the full process) is given in the example above (but customizable)
 
 
+## Handling local modules
 
+If your project includes local modules and they are included in package.json using a relative path (_e.g._ `'my-helper-module': "file:../my-helper-module"`) then the node-mods task will fail to run `npm install` correctly as these modules are no longer resolvable from within the dist folder.
+
+To rectify this situation the module import takes a second parameter `options` which can be used to fix-up these relative paths in the package.json as it being copied to dist/, so changing the `require` to:
+````js
+require('aws-lambda-gulp-tasks')(gulp, { fixRelativePackages: true });
+````
+in your gulpfile.js will ensure the `gulp deploy` works as expected.
 
 # License
 

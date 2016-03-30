@@ -21,8 +21,10 @@
     "aws-sdk": "^2.1.45",
     "del": "^2.0.0",
     "gulp": "^3.9.0",
+    "gulp-if": "^2.0.0",
     "gulp-install": "^0.5.0",
-    "gulp-zip": "^3.0.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-zip": "^3.0.2",  
     "node-aws-lambda": "^0.1.5"
   }
 }
